@@ -11,8 +11,8 @@ export default function User() {
         await fetch('https://jsonplaceholder.typicode.com/users')
         .then((response) => response.json())
         .then((result) => {
-            console.log(result)
-            setData(result)
+            console.log(result);
+            setData(result);
         })
     }
 
@@ -22,7 +22,12 @@ export default function User() {
             <h4>User:</h4>
             {
                 data.map(user => {
-                    return <div>{user.name + ': ' + user.email}</div>
+                    return <div>
+                        <div>Name: {user.name}</div>
+                        <div>Email: {user.email}</div>
+                        <div>Website: {user.website}</div>
+                        ---
+                        </div>
                 })
             }
         </div>
